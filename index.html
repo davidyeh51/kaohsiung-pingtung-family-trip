@@ -1,0 +1,1706 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2026中秋高屏四天三夜親子慢活遊 (9/25~9/28) | 熱氣球 ‧ 雙市集 ‧ 爸爸一對一帶娃 ‧ 在家休整</title>
+  <meta name="description" content="專為夫妻兩人與17個月大可愛女兒量身打造的高屏中秋四天三夜親子慢活行程。丈母娘開車送回高雄、駁二水岸海風、屏東西市場即刻月圓、萬倉街橋下市集、田寮月世界巨萌高雄熊熱氣球、義享天地爸爸單挑帶娃SOP、連假最後一天在家休整不出遊。">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            moon: {
+              50: '#faf5ff',
+              100: '#f3e8ff',
+              200: '#e9d5ff',
+              500: '#a855f7',
+              600: '#9333ea',
+              700: '#7e22ce',
+              800: '#6b21a8',
+              900: '#581c87',
+            },
+            warm: {
+              50: '#fffbeb',
+              100: '#fef3c7',
+              200: '#fde68a',
+              400: '#fbbf24',
+              500: '#f59e0b',
+              600: '#d97706',
+              700: '#b45309',
+            },
+            ocean: {
+              50: '#f0fdfa',
+              100: '#ccfbf1',
+              500: '#14b8a6',
+              600: '#0d9488',
+              700: '#0f766e',
+            }
+          },
+          fontFamily: {
+            sans: ['-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', '"Noto Sans TC"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- exifr - EXIF & GPS Parser -->
+  <script src="https://cdn.jsdelivr.net/npm/exifr/dist/full.umd.js"></script>
+  <!-- Leaflet Map CSS & JS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <style>
+    .glass-nav {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.8125rem;
+      font-weight: 600;
+    }
+    #map {
+      height: 480px;
+      border-radius: 1rem;
+      z-index: 10;
+    }
+    .img-zoom-container {
+      overflow: hidden;
+      border-radius: 1rem;
+    }
+    .img-zoom-container img {
+      transition: transform 0.5s ease;
+    }
+    .img-zoom-container:hover img {
+      transform: scale(1.04);
+    }
+    @media print {
+      .no-print { display: none !important; }
+      .print-full { width: 100% !important; margin: 0 !important; }
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased font-sans selection:bg-amber-500 selection:text-white pb-24 md:pb-12">
+
+  <!-- Top Sticky Navigation Bar -->
+  <nav class="sticky top-0 z-50 glass-nav border-b border-slate-200 shadow-sm transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <a href="#" class="flex items-center space-x-2.5">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-amber-500 via-purple-600 to-indigo-600 flex items-center justify-center text-white shadow-md text-lg">
+            <i class="fa-solid fa-moon"></i>
+          </div>
+          <div>
+            <span class="font-extrabold text-lg text-slate-900 tracking-tight flex items-center gap-1.5">
+              高屏中秋親子慢旅
+              <span class="bg-amber-100 text-amber-800 text-[11px] font-bold px-2 py-0.5 rounded-full">4天3夜</span>
+            </span>
+            <span class="text-xs text-purple-700 block -mt-0.5 font-medium">9/25 - 9/28 ‧ 夫妻 & 17M女兒</span>
+          </div>
+        </a>
+
+        <!-- Desktop Menu -->
+        <div class="hidden lg:flex items-center space-x-1 text-sm font-medium text-slate-600">
+          <a href="#overview" class="px-3 py-2 rounded-lg hover:text-amber-600 hover:bg-amber-50 transition">行程亮點</a>
+          <a href="#day1" class="px-3 py-2 rounded-lg hover:text-purple-600 hover:bg-purple-50 transition">Day 1 迎賓</a>
+          <a href="#day2" class="px-3 py-2 rounded-lg hover:text-purple-600 hover:bg-purple-50 transition">Day 2 屏東</a>
+          <a href="#day3" class="px-3 py-2 rounded-lg hover:text-purple-600 hover:bg-purple-50 transition">Day 3 熱氣球 & 父女約會</a>
+          <a href="#day4" class="px-3 py-2 rounded-lg hover:text-emerald-600 hover:bg-emerald-50 transition">Day 4 在家休整</a>
+          <a href="#venues" class="px-3 py-2 rounded-lg hover:text-amber-600 hover:bg-amber-50 transition">3大活動指南</a>
+          <a href="#baby-tips" class="px-3 py-2 rounded-lg hover:text-pink-600 hover:bg-pink-50 transition">17M育兒指南</a>
+          <a href="#photo-story-section" class="px-3 py-2 rounded-lg text-purple-700 hover:bg-purple-50 transition font-bold"><i class="fa-solid fa-camera-retro mr-1"></i>照片故事</a>
+          <a href="#map-section" class="px-3 py-2 rounded-lg hover:text-teal-600 hover:bg-teal-50 transition">地圖導航</a>
+          <button onclick="window.print()" class="ml-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white px-3.5 py-1.5 rounded-lg text-xs flex items-center space-x-1 shadow-sm transition">
+            <i class="fa-solid fa-print"></i>
+            <span>列印/PDF</span>
+          </button>
+        </div>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobile-menu-btn" class="lg:hidden text-slate-600 hover:text-slate-900 p-2 rounded-lg">
+          <i class="fa-solid fa-bars text-xl"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="hidden lg:hidden border-b border-slate-200 bg-white/95 px-4 pt-2 pb-4 space-y-1">
+      <a href="#overview" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-amber-50 hover:text-amber-600">行程特色與亮點</a>
+      <a href="#day1" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-purple-50 hover:text-purple-600">Day 1 (9/25) 丈母娘送抵高雄 ＆ 駁二水岸</a>
+      <a href="#day2" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-purple-50 hover:text-purple-600">Day 2 (9/26) 屏東總圖 ＆ 西市場 ＆ 萬倉街</a>
+      <a href="#day3" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-purple-50 hover:text-purple-600">Day 3 (9/27) 田寮熱氣球 ＆ 爸爸一對一帶娃</a>
+      <a href="#day4" class="block px-3 py-2 rounded-md text-base font-medium text-emerald-700 hover:bg-emerald-50">Day 4 (9/28) 休整日不出遊 ‧ 在家休息</a>
+      <a href="#venues" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-amber-50 hover:text-amber-600">2026 中秋限定活動攻略</a>
+      <a href="#baby-tips" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-pink-50 hover:text-pink-600">17M 寶寶照顧清單 ＆ 爸爸單挑 SOP</a>
+      <a href="#photo-story-section" class="block px-3 py-2 rounded-md text-base font-medium text-purple-700 hover:bg-purple-50"><i class="fa-solid fa-camera-retro mr-1.5"></i>旅行照片故事 (GPS 智慧回憶錄)</a>
+      <a href="#map-section" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-teal-50 hover:text-teal-600">Google 地圖與各站導航</a>
+      <div class="pt-2">
+        <button onclick="window.print()" class="w-full bg-amber-500 text-white py-2 rounded-lg text-sm font-semibold">
+          <i class="fa-solid fa-print mr-1"></i> 列印或另存為 PDF
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="relative bg-gradient-to-b from-indigo-950 via-purple-950 to-slate-900 text-white overflow-hidden py-14 md:py-20">
+    <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#fbbf24_1px,transparent_1px)] [background-size:20px_20px]"></div>
+    <div class="relative max-w-5xl mx-auto px-4 sm:px-6 text-center">
+      <div class="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-md px-4 py-1.5 rounded-full text-xs md:text-sm font-medium text-amber-200 mb-6 border border-white/15">
+        <i class="fa-solid fa-moon text-amber-300"></i>
+        <span>2026 中秋節連假限定 ‧ 高雄 ＆ 屏東慢活四天三夜</span>
+      </div>
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-white mb-4 leading-tight">
+        港都月圓 ‧ 熱氣球 ‧ 雙市集親子慢旅
+      </h1>
+      <p class="text-sm sm:text-base md:text-lg text-slate-200 max-w-2xl mx-auto leading-relaxed mb-6 font-normal">
+        為夫妻兩人與 <strong class="text-amber-300 font-bold">17 個月大可愛女兒</strong> 精心策劃。9/25 丈母娘開車接送迎賓、9/26 屏東冷氣綠市場與橋下市集、9/27 田寮高雄熊熱氣球與「爸爸一對一帶娃浪漫約會」、9/28 全家在家安心休整！
+      </p>
+
+      <!-- Key Pill Badges -->
+      <div class="flex flex-wrap justify-center gap-2 sm:gap-3 text-xs md:text-sm font-medium">
+        <span class="bg-purple-900/60 text-purple-200 border border-purple-500/40 px-3 py-1 rounded-full flex items-center gap-1">
+          <i class="fa-solid fa-car-side text-amber-400"></i> 丈母娘開車送回高雄
+        </span>
+        <span class="bg-purple-900/60 text-purple-200 border border-purple-500/40 px-3 py-1 rounded-full flex items-center gap-1">
+          <i class="fa-solid fa-hot-air-balloon text-amber-400"></i> 田寮月世界熱氣球
+        </span>
+        <span class="bg-purple-900/60 text-purple-200 border border-purple-500/40 px-3 py-1 rounded-full flex items-center gap-1">
+          <i class="fa-solid fa-snowflake text-cyan-300"></i> 屏東西市場中央空調
+        </span>
+        <span class="bg-purple-900/60 text-purple-200 border border-purple-500/40 px-3 py-1 rounded-full flex items-center gap-1">
+          <i class="fa-solid fa-person-breastfeeding text-pink-300"></i> 9/27 爸爸單挑帶娃SOP
+        </span>
+        <span class="bg-emerald-900/60 text-emerald-200 border border-emerald-500/40 px-3 py-1 rounded-full flex items-center gap-1">
+          <i class="fa-solid fa-house-chimney text-emerald-300"></i> 9/28 在家休整充飽電
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 -mt-6 relative z-20 space-y-10">
+
+    <!-- WEATHER DASHBOARD SECTION -->
+    <section id="weather-dashboard" class="pt-2">
+      <div class="bg-white rounded-3xl p-6 sm:p-7 shadow-xl border border-slate-200/80 backdrop-blur-sm">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-slate-100 pb-4 mb-5 gap-2">
+          <div class="flex items-center space-x-2.5">
+            <div class="w-8 h-8 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center text-base">
+              <i class="fa-solid fa-cloud-sun"></i>
+            </div>
+            <div>
+              <h2 class="text-lg font-bold text-slate-900">🌤️ 高屏中秋連假即時氣象看板 (9/25 ~ 9/28)</h2>
+              <p class="text-xs text-slate-500">依據氣象署歷年九月下旬統計，南部白天晴熱、入夜涼爽微風，適合戶外賞月！</p>
+            </div>
+          </div>
+          <span class="badge-pill bg-amber-50 text-amber-700 border border-amber-200 text-xs self-start sm:self-auto">
+            <i class="fa-solid fa-moon mr-1 text-amber-500"></i>中秋月相：滿月澄澈
+          </span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <!-- Kaohsiung City -->
+          <div class="bg-slate-50 rounded-2xl p-4 border border-slate-200 flex flex-col justify-between">
+            <div class="flex justify-between items-start">
+              <div>
+                <span class="text-xs font-bold text-indigo-700 uppercase tracking-wider">高雄市區 (駁二/義享)</span>
+                <div class="text-2xl font-black text-slate-800 mt-1">26°C ~ 32°C</div>
+              </div>
+              <i class="fa-solid fa-sun text-amber-400 text-2xl"></i>
+            </div>
+            <div class="mt-3 text-xs text-slate-600 space-y-1 border-t border-slate-200/60 pt-2">
+              <div class="flex justify-between"><span>天氣概況</span><span class="font-medium text-slate-800">晴時多雲 ‧ 海風舒暢</span></div>
+              <div class="flex justify-between"><span>日落賞月</span><span class="font-medium text-amber-600">17:58 日落 / 滿月升起</span></div>
+              <div class="flex justify-between"><span>育兒防護</span><span class="font-medium text-purple-700">午後推車備充電夾扇</span></div>
+            </div>
+          </div>
+
+          <!-- Tianliao Moon World -->
+          <div class="bg-slate-50 rounded-2xl p-4 border border-slate-200 flex flex-col justify-between">
+            <div class="flex justify-between items-start">
+              <div>
+                <span class="text-xs font-bold text-purple-700 uppercase tracking-wider">田寮月世界 (熱氣球)</span>
+                <div class="text-2xl font-black text-slate-800 mt-1">24°C ~ 31°C</div>
+              </div>
+              <i class="fa-solid fa-hot-air-balloon text-purple-500 text-2xl"></i>
+            </div>
+            <div class="mt-3 text-xs text-slate-600 space-y-1 border-t border-slate-200/60 pt-2">
+              <div class="flex justify-between"><span>風速條件</span><span class="font-medium text-slate-800">微風 2 級 (適宜熱氣球)</span></div>
+              <div class="flex justify-between"><span>早晚溫差</span><span class="font-medium text-amber-600">約 7°C (早晨偏涼)</span></div>
+              <div class="flex justify-between"><span>育兒防護</span><span class="font-medium text-purple-700">防蚊液 ＆ 幼兒遮陽帽</span></div>
+            </div>
+          </div>
+
+          <!-- Pingtung City -->
+          <div class="bg-slate-50 rounded-2xl p-4 border border-slate-200 flex flex-col justify-between">
+            <div class="flex justify-between items-start">
+              <div>
+                <span class="text-xs font-bold text-teal-700 uppercase tracking-wider">屏東市區 (西市場/總圖)</span>
+                <div class="text-2xl font-black text-slate-800 mt-1">25°C ~ 32°C</div>
+              </div>
+              <i class="fa-solid fa-tree text-teal-500 text-2xl"></i>
+            </div>
+            <div class="mt-3 text-xs text-slate-600 space-y-1 border-t border-slate-200/60 pt-2">
+              <div class="flex justify-between"><span>環境體感</span><span class="font-medium text-slate-800">中午稍熱 ‧ 傍晚涼爽</span></div>
+              <div class="flex justify-between"><span>市集環境</span><span class="font-medium text-teal-600">室內空調 ＆ 橋下全遮陰</span></div>
+              <div class="flex justify-between"><span>育兒防護</span><span class="font-medium text-purple-700">多補充水份、防蚊貼</span></div>
+            </div>
+          </div>
+
+          <!-- Home Rest Day -->
+          <div class="bg-emerald-50/70 rounded-2xl p-4 border border-emerald-200 flex flex-col justify-between">
+            <div class="flex justify-between items-start">
+              <div>
+                <span class="text-xs font-bold text-emerald-800 uppercase tracking-wider">9/28 在家休整日</span>
+                <div class="text-2xl font-black text-emerald-950 mt-1">舒適 26°C</div>
+              </div>
+              <i class="fa-solid fa-mug-saucer text-emerald-500 text-2xl"></i>
+            </div>
+            <div class="mt-3 text-xs text-emerald-800 space-y-1 border-t border-emerald-200/70 pt-2">
+              <div class="flex justify-between"><span>室內氛圍</span><span class="font-medium text-emerald-900">放鬆冷氣 25°C、輕音樂</span></div>
+              <div class="flex justify-between"><span>作息安排</span><span class="font-medium text-emerald-900">自然醒、飽足午睡 2hr</span></div>
+              <div class="flex justify-between"><span>身心充電</span><span class="font-medium text-emerald-900">滿血迎接開工上學</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OVERVIEW HIGHLIGHTS -->
+    <section id="overview" class="pt-2">
+      <div class="text-center max-w-2xl mx-auto mb-6">
+        <span class="badge-pill bg-purple-100 text-purple-800 font-bold text-xs">行程核心設計</span>
+        <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mt-1">高屏中秋慢旅 ‧ 5 大貼心原則</h2>
+        <div class="w-12 h-1 bg-amber-500 mx-auto mt-2 rounded-full"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm space-y-2">
+          <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center text-lg font-bold">
+            <i class="fa-solid fa-heart"></i>
+          </div>
+          <h3 class="text-base font-bold text-slate-900">丈母娘開車接送 ‧ 迎賓大擁抱</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            9/25 14:00 老婆與小女兒由丈母娘開車平安送抵高雄。大衛主動搬運行李、向丈母娘表達滿滿感謝，迎回妻女立刻開冷氣小憩，旅程起步好溫馨。
+          </p>
+        </div>
+
+        <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm space-y-2">
+          <div class="w-10 h-10 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center text-lg font-bold">
+            <i class="fa-solid fa-person-breastfeeding"></i>
+          </div>
+          <h3 class="text-base font-bold text-slate-900">9/27 晚上 ‧ 爸爸一對一帶娃浪漫約會</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            老婆晚上與家人聚餐，爸爸單挑 17M 女兒！鎖定「義享天地」頂級育嬰室，烏龍麵剪碎、茶碗蒸滑嫩一口接一口，推車逛玩具區，洗澡拍睡一條龍。
+          </p>
+        </div>
+
+        <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm space-y-2">
+          <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center text-lg font-bold">
+            <i class="fa-solid fa-couch"></i>
+          </div>
+          <h3 class="text-base font-bold text-slate-900">9/28 連假最後一日 ‧ 在家休整收心</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            不出門人擠人！全家在家睡到自然醒，享用熱壓吐司早午餐、整理洗滌衣物、寶寶熟悉地墊上盡情玩耍並午睡 2 小時，充飽電迎接新一週。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ITINERARY FILTER TABS -->
+    <div class="flex flex-wrap items-center justify-between gap-3 pt-4 border-t border-slate-200">
+      <div>
+        <h2 class="text-xl sm:text-2xl font-black text-slate-900">📅 四天三夜逐日行程</h2>
+        <p class="text-xs text-slate-500">每日明確劃分為【上午】、【下午】、【晚上】</p>
+      </div>
+      <div class="bg-slate-200/80 p-1.5 rounded-2xl inline-flex flex-wrap gap-1">
+        <button id="btn-all" onclick="filterDay('all')" class="filter-btn active bg-purple-700 text-white shadow-xs px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-bold transition">全部天數</button>
+        <button id="btn-day1" onclick="filterDay('day1')" class="filter-btn bg-white hover:bg-slate-100 text-slate-700 px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-semibold transition">Day 1 (9/25)</button>
+        <button id="btn-day2" onclick="filterDay('day2')" class="filter-btn bg-white hover:bg-slate-100 text-slate-700 px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-semibold transition">Day 2 (9/26)</button>
+        <button id="btn-day3" onclick="filterDay('day3')" class="filter-btn bg-white hover:bg-slate-100 text-slate-700 px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-semibold transition">Day 3 (9/27)</button>
+        <button id="btn-day4" onclick="filterDay('day4')" class="filter-btn bg-white hover:bg-slate-100 text-slate-700 px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-semibold transition">Day 4 (9/28 休整)</button>
+      </div>
+    </div>
+
+    <!-- ==================== DAY 1 ==================== -->
+    <section id="day1" class="day-card space-y-6 pt-2">
+      <!-- Day 1 Header -->
+      <div class="bg-gradient-to-r from-purple-800 to-indigo-900 text-white rounded-3xl p-6 sm:p-7 shadow-lg flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div>
+          <div class="flex items-center gap-2 mb-2">
+            <span class="badge-pill bg-amber-400 text-amber-950 font-black text-xs">DAY 1</span>
+            <span class="text-purple-200 text-xs sm:text-sm font-semibold">2026 年 9 月 25 日（五）中秋連假首日</span>
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">港都迎賓相聚 ‧ 駁二夕陽與海風漫步</h2>
+          <p class="text-purple-200 text-xs sm:text-sm mt-1">丈母娘開車送回高雄 ➔ 飯店安置梳洗 ➔ 駁二大港橋輕軌 ➔ 棧貳庫港景賞月</p>
+        </div>
+        <div class="flex flex-wrap items-center gap-2">
+          <a href="https://www.google.com/maps/dir/?api=1&origin=Kaohsiung&destination=駁二藝術特區&waypoints=大港橋|棧貳庫KW2" target="_blank" class="bg-white/10 hover:bg-white/20 text-white text-xs px-3.5 py-2 rounded-xl border border-white/20 transition flex items-center space-x-1.5">
+            <i class="fa-solid fa-location-arrow"></i>
+            <span>Google 地圖路線</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Day 1 Three Periods -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <!-- Morning -->
+        <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between border-b border-slate-100 pb-2 mb-3">
+              <span class="badge-pill bg-amber-100 text-amber-800 text-xs font-bold"><i class="fa-regular fa-sun mr-1"></i>上午 (Morning)</span>
+              <span class="text-xs text-slate-400 font-medium">09:00 - 13:00</span>
+            </div>
+            <h3 class="font-extrabold text-slate-900 text-base mb-2">爸爸整備 ＆ 丈母娘母女車程</h3>
+            <ul class="text-xs text-slate-600 space-y-2 leading-relaxed">
+              <li class="flex items-start gap-1.5">
+                <i class="fa-solid fa-check text-purple-600 mt-0.5"></i>
+                <span><strong>爸爸在高雄整備</strong>：整理室內環境、冷氣先行開啟除濕、準備保溫瓶溫水、幼兒副食品與小點心。</span>
+              </li>
+              <li class="flex items-start gap-1.5">
+                <i class="fa-solid fa-car text-amber-500 mt-0.5"></i>
+                <span><strong>南下行車中</strong>：老婆與 17M 女兒搭乘丈母娘開的車南下返高，車上備妥安撫玩具，寶寶在車上小憩。</span>
+              </li>
+            </ul>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 text-[11px] text-slate-400 flex items-center gap-1">
+            <i class="fa-solid fa-shield-cat text-amber-500"></i> 爸爸貼心預備迎賓，零匆忙
+          </div>
+        </div>
+
+        <!-- Afternoon -->
+        <div class="bg-white rounded-2xl p-5 border-2 border-purple-200 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between border-b border-slate-100 pb-2 mb-3">
+              <span class="badge-pill bg-purple-100 text-purple-800 text-xs font-bold"><i class="fa-solid fa-sun mr-1"></i>下午 (Afternoon)</span>
+              <span class="text-xs text-purple-600 font-bold">14:00 - 17:30</span>
+            </div>
+            <h3 class="font-extrabold text-slate-900 text-base mb-2">14:00 迎賓接風 ➔ 駁二大港橋輕軌</h3>
+            <ul class="text-xs text-slate-600 space-y-2 leading-relaxed">
+              <li class="flex items-start gap-1.5">
+                <i class="fa-solid fa-hand-holding-heart text-pink-500 mt-0.5"></i>
+                <span><strong>14:00 丈母娘送抵高雄</strong>：大衛熱情接車、搬運行李，表達真摯謝意！接過小女兒給個大擁抱。</span>
+              </li>
+              <li class="flex items-start gap-1.5">
+                <i class="fa-solid fa-bed text-purple-600 mt-0.5"></i>
+                <span><strong>14:30~15:30 吹冷氣小憩</strong>：飯店或家中洗臉換尿布，讓 17M 女兒喝奶放鬆伸展筋骨。</span>
+              </li>
+              <li class="flex items-start gap-1.5">
+                <i class="fa-solid fa-bridge-water text-cyan-600 mt-0.5"></i>
+                <span><strong>16:00 駁二大港橋 & 輕軌</strong>：傍晚海風舒暢，推車平坦無障礙；搭乘 2 站輕軌看港灣風景，寶寶超開懷。</span>
+              </li>
+            </ul>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 text-[11px] text-purple-700 font-semibold flex items-center gap-1">
+            <i class="fa-solid fa-baby-carriage"></i> 避開正午酷曬，傍晚水岸最宜人
+          </div>
+        </div>
+
+        <!-- Evening -->
+        <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between border-b border-slate-100 pb-2 mb-3">
+              <span class="badge-pill bg-indigo-100 text-indigo-800 text-xs font-bold"><i class="fa-solid fa-moon mr-1"></i>晚上 (Evening)</span>
+              <span class="text-xs text-slate-400 font-medium">18:00 - 21:00</span>
+            </div>
+            <h3 class="font-extrabold text-slate-900 text-base mb-2">棧貳庫水岸賞月 ＆ 鹽埕無負擔美食</h3>
+            <ul class="text-xs text-slate-600 space-y-2 leading-relaxed">
+              <li class="flex items-start gap-1.5">
+                <i class="fa-solid fa-utensils text-amber-500 mt-0.5"></i>
+                <span><strong>晚餐外帶回房</strong>：外帶鹽埕區「鴨肉珍」無刺去骨鴨肉盤、米血、鴨肉冬粉與燙青菜，回房自在享用，免去餐廳哄娃壓力。</span>
+              </li>
+              <li class="flex items-start gap-1.5">
+                <i class="fa-solid fa-shower text-blue-500 mt-0.5"></i>
+                <span><strong>20:00 舒適泡澡</strong>：給女兒洗溫水澡、擦乳液換純棉包屁衣，21:00 喝睡前奶安穩入眠。</span>
+              </li>
+            </ul>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 text-[11px] text-slate-400 flex items-center gap-1">
+            <i class="fa-solid fa-cookie-bite text-amber-500"></i> 回房自在吃，大人放鬆賞中秋明月
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== DAY 2 ==================== -->
+    <section id="day2" class="day-card space-y-6 pt-2">
+      <!-- Day 2 Header -->
+      <div class="bg-gradient-to-r from-teal-800 to-emerald-900 text-white rounded-3xl p-6 sm:p-7 shadow-lg flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div>
+          <div class="flex items-center gap-2 mb-2">
+            <span class="badge-pill bg-amber-400 text-amber-950 font-black text-xs">DAY 2</span>
+            <span class="text-teal-200 text-xs sm:text-sm font-semibold">2026 年 9 月 26 日（六）國境之南文創日</span>
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">屏東森林圖書館 ＆ 質感雙市集漫遊</h2>
+          <p class="text-teal-200 text-xs sm:text-sm mt-1">屏東總圖 1F 兒童閱覽 ➔ 勝利星村老屋 ➔ 屏東西市場（好市） ➔ 萬倉街市集</p>
+        </div>
+        <div class="flex flex-wrap items-center gap-2">
+          <a href="https://www.google.com/maps/dir/?api=1&origin=Kaohsiung&destination=屏東西市場&waypoints=屏東縣立圖書館總館|勝利星村創意生活園區|萬倉街" target="_blank" class="bg-white/10 hover:bg-white/20 text-white text-xs px-3.5 py-2 rounded-xl border border-white/20 transition flex items-center space-x-1.5">
+            <i class="fa-solid fa-location-arrow"></i>
+            <span>Google 地圖路線</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Day 2 Three Periods -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <!-- Morning -->
+        <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between border-b border-slate-100 pb-2 mb-3">
+              <span class="badge-pill bg-amber-100 text-amber-800 text-xs font-bold"><i class="fa-regular fa-sun mr-1"></i>上午 (Morning)</span>
+              <span class="text-xs text-slate-400 font-medium">09:00 - 12:30</span>
+            </div>
+            <h3 class="font-extrabold text-slate-900 text-base mb-2">森林圖書館 ＆ 勝利星村老屋</h3>
+            <ul class="text-xs text-slate-600 space-y-2 leading-relaxed">
+              <li class="flex items-start gap-1.5">
+                <i class="fa-solid fa-car text-teal-600 mt-0.5"></i>
+                <span><strong>車程僅 35 分鐘</strong>：行駛台 88 快速道路直達屏東市區，路程短不鬧脾氣。</span>
+              </li>
+              <li class="flex items-start gap-1.5">
+                <i class="fa-solid fa-book-open-reader text-purple-600 mt-0.5"></i>
+                <span><strong>屏東縣立圖書館總館</strong>：最美森林玻璃屋，1F 木地板兒童專區，軟墊地毯翻厚紙繪本爬行，五星級哺集乳室。</span>
+              </li>
+              <li class="flex items-start gap-1.5">
+                <i class="fa-solid fa-utensils text-amber-600 mt-0.5"></i>
+                <span><strong>勝利星村午餐</strong>：日式眷村庭園餐廳，點選清燉雞湯麵線、日式蒸蛋、清蒸地瓜，幼兒超愛。</span>
+              </li>
+            </ul>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 text-[11px] text-teal-700 font-semibold flex items-center gap-1">
+            <i class="fa-solid fa-tree"></i> 樟樹林蔭包圍，室內冷氣充足
+          </div>
+        </div>
+
+        <!-- Afternoon -->
+        <div class="bg-white rounded-2xl p-5 border-2 border-teal-200 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between border-b border-slate-100 pb-2 mb-3">
+              <span class="badge-pill bg-teal-100 text-teal-800 text-xs font-bold"><i class="fa-solid fa-sun mr-1"></i>下午 (Afternoon)</span>
+              <span class="text-xs text-teal-700 font-bold">13:00 - 17:45</span>
+            </div>
+            <h3 class="font-extrabold text-slate-900 text-base mb-2">車上午睡 ➔ 西市場 ➔ 萬倉街市集</h3>
+            <ul class="text-xs text-slate-600 space-y-2 leading-relaxed">
+              <li class="flex items-start gap-1.5">
+                <i class="fa-solid fa-bed text-blue-500 mt-0.5"></i>
+                <span><strong>13:00~14:30 車上午睡</strong>：餐後在冷氣車內汽座上安穩午睡 1~1.5 小時充分充電。</span>
+              </li>
+              <li class="flex items-start gap-1.5">
+                <i class="fa-solid fa-snowflake text-cyan-600 mt-0.5"></i>
+                <span><strong>15:00 屏東西市場（好市）</strong>：全台首座綠建築全冷氣室內市場！雙舞台藝文表演，推車寬敞平坦，採買屏東鮮切水果。</span>
+              </li>
+              <li class="flex items-start gap-1.5">
+                <i class="fa-solid fa-cat text-amber-600 mt-0.5"></i>
+                <span><strong>16:45 萬倉街 NEKO MARKET</strong>：高架鐵路橋下全遮陰！百攤文創手作、毛小孩變裝，微風徐徐好逛不熱。</span>
+              </li>
+            </ul>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 text-[11px] text-teal-700 font-semibold flex items-center gap-1">
+            <i class="fa-solid fa-umbrella"></i> 結合中秋限定兩大市集，零曝曬
+          </div>
+        </div>
+
+        <!-- Evening -->
+        <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between border-b border-slate-100 pb-2 mb-3">
+              <span class="badge-pill bg-indigo-100 text-indigo-800 text-xs font-bold"><i class="fa-solid fa-moon mr-1"></i>晚上 (Evening)</span>
+              <span class="text-xs text-slate-400 font-medium">18:00 - 21:00</span>
+            </div>
+            <h3 class="font-extrabold text-slate-900 text-base mb-2">鮮味料理 ➔ 乘車小憩回高雄</h3>
+            <ul class="text-xs text-slate-600 space-y-2 leading-relaxed">
+              <li class="flex items-start gap-1.5">
+                <i class="fa-solid fa-bowl-rice text-amber-500 mt-0.5"></i>
+                <span><strong>屏東在地晚餐</strong>：享用鮮美無刺虱目魚肚湯、海鮮粥或清淡家庭合菜。</span>
+              </li>
+              <li class="flex items-start gap-1.5">
+                <i class="fa-solid fa-car-side text-indigo-600 mt-0.5"></i>
+                <span><strong>19:30 平安返回高雄</strong>：車程約 35 分鐘，小女兒在車上聽兒歌輕搖小歇，回房洗澡休息。</span>
+              </li>
+            </ul>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 text-[11px] text-slate-400 flex items-center gap-1">
+            <i class="fa-solid fa-road text-indigo-500"></i> 當日往返零負擔，夜宿熟悉飯店/家中
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== DAY 3 ==================== -->
+    <section id="day3" class="day-card space-y-6 pt-2">
+      <!-- Day 3 Header -->
+      <div class="bg-gradient-to-r from-amber-700 via-purple-900 to-indigo-950 text-white rounded-3xl p-6 sm:p-7 shadow-lg flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div>
+          <div class="flex items-center gap-2 mb-2">
+            <span class="badge-pill bg-amber-400 text-amber-950 font-black text-xs">DAY 3</span>
+            <span class="text-amber-200 text-xs sm:text-sm font-semibold">2026 年 9 月 27 日（日）重頭戲：熱氣球 ＆ 父女之夜</span>
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">田寮月世界熱氣球 ＆ 爸爸一對一帶娃約會</h2>
+          <p class="text-purple-200 text-xs sm:text-sm mt-1">28公尺高雄熊熱氣球 ➔ 土雞城午餐 ➔ 送媽媽赴家族聚餐 ➔ 義享天地父女浪漫之夜</p>
+        </div>
+        <div class="flex flex-wrap items-center gap-2">
+          <a href="https://www.google.com/maps/dir/?api=1&origin=Kaohsiung&destination=田寮月世界&waypoints=義享天地" target="_blank" class="bg-white/10 hover:bg-white/20 text-white text-xs px-3.5 py-2 rounded-xl border border-white/20 transition flex items-center space-x-1.5">
+            <i class="fa-solid fa-location-arrow"></i>
+            <span>Google 地圖路線</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Day 3 Three Periods -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <!-- Morning -->
+        <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between border-b border-slate-100 pb-2 mb-3">
+              <span class="badge-pill bg-amber-100 text-amber-800 text-xs font-bold"><i class="fa-regular fa-sun mr-1"></i>上午 (Morning)</span>
+              <span class="text-xs text-slate-400 font-medium">09:00 - 13:00</span>
+            </div>
+            <h3 class="font-extrabold text-slate-900 text-base mb-2">田寮月世界熱氣球 ＆ 土雞城午餐</h3>
+            <ul class="text-xs text-slate-600 space-y-2 leading-relaxed">
+              <li class="flex items-start gap-1.5">
+                <i class="fa-solid fa-hot-air-balloon text-purple-600 mt-0.5"></i>
+                <span><strong>高雄愛‧月熱氣球</strong>：欣賞 28 公尺高巨萌「高雄熊熱氣球」升空，平地合影超吸睛！</span>
+              </li>
+              <li class="flex items-start gap-1.5">
+                <i class="fa-solid fa-store text-amber-600 mt-0.5"></i>
+                <span><strong>月球漫步市集</strong>：兌換活動專屬紀念扇搧涼，漫步平整環湖步道欣賞惡地風貌。</span>
+              </li>
+              <li class="flex items-start gap-1.5">
+                <i class="fa-solid fa-drumstick-bite text-amber-700 mt-0.5"></i>
+                <span><strong>田寮土雞城午餐</strong>：蒜頭雞清高湯泡飯、軟嫩手工麵線、清蒸鱸魚，17M 寶寶吃得津津有味。</span>
+              </li>
+            </ul>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 text-[11px] text-purple-700 font-semibold flex items-center gap-1">
+            <i class="fa-solid fa-shield-heart"></i> 幼兒平地觀賞拍照最安全舒適
+          </div>
+        </div>
+
+        <!-- Afternoon -->
+        <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between border-b border-slate-100 pb-2 mb-3">
+              <span class="badge-pill bg-purple-100 text-purple-800 text-xs font-bold"><i class="fa-solid fa-sun mr-1"></i>下午 (Afternoon)</span>
+              <span class="text-xs text-slate-400 font-medium">13:30 - 17:00</span>
+            </div>
+            <h3 class="font-extrabold text-slate-900 text-base mb-2">車上午睡 ➔ 飯店梳洗 ➔ 送媽媽赴宴</h3>
+            <ul class="text-xs text-slate-600 space-y-2 leading-relaxed">
+              <li class="flex items-start gap-1.5">
+                <i class="fa-solid fa-bed text-blue-500 mt-0.5"></i>
+                <span><strong>車上午睡充電</strong>：放電完畢的女兒上車吹冷氣秒睡 1 小時，直達市區。</span>
+              </li>
+              <li class="flex items-start gap-1.5">
+                <i class="fa-solid fa-shirt text-purple-600 mt-0.5"></i>
+                <span><strong>換上漂亮童裝</strong>：回房幫女兒換上透氣舒適的漂亮衣服，媽媽梳化準備家族聚餐。</span>
+              </li>
+              <li class="flex items-start gap-1.5">
+                <i class="fa-solid fa-hand-holding-heart text-pink-500 mt-0.5"></i>
+                <span><strong>16:30 送媽媽赴宴</strong>：爸爸開車送老婆抵達與丈母娘/家族聚餐的餐廳，貼心叮嚀老婆盡情放鬆！</span>
+              </li>
+            </ul>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 text-[11px] text-slate-400 flex items-center gap-1">
+            <i class="fa-solid fa-award text-amber-500"></i> 神隊友爸爸暖心接送，完全放飛老婆
+          </div>
+        </div>
+
+        <!-- Evening - Dad & Daughter Highlight -->
+        <div class="bg-gradient-to-br from-purple-50 via-pink-50 to-amber-50 rounded-2xl p-5 border-2 border-purple-400 shadow-md flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between border-b border-purple-200 pb-2 mb-3">
+              <span class="badge-pill bg-purple-600 text-white text-xs font-black">🌟 晚上 (Evening) 父女約會</span>
+              <span class="text-xs text-purple-900 font-bold">17:30 - 21:00</span>
+            </div>
+            <h3 class="font-black text-purple-950 text-base mb-2">爸爸 ＋ 17M 女兒一對一約會指南</h3>
+            <ul class="text-xs text-slate-700 space-y-2 leading-relaxed">
+              <li class="flex items-start gap-1.5">
+                <i class="fa-solid fa-building text-purple-600 mt-0.5"></i>
+                <span><strong>基地：義享天地</strong>：五星級無障礙電梯、5F 頂級育嬰室（冷熱水/尿布台/溫奶器）隨時待命。</span>
+              </li>
+              <li class="flex items-start gap-1.5">
+                <i class="fa-solid fa-utensils text-amber-600 mt-0.5"></i>
+                <span><strong>丸龜/大戶屋晚餐</strong>：剪碎烏龍麵＋現蒸鮮甜茶碗蒸＋高麗菜，一人單手餵食輕鬆自如。</span>
+              </li>
+              <li class="flex items-start gap-1.5">
+                <i class="fa-solid fa-train text-pink-600 mt-0.5"></i>
+                <span><strong>5F 玩具模型火車漫步</strong>：推車散步看會動的展示小火車，喝無糖優格，自拍甜蜜照片傳給老婆！</span>
+              </li>
+              <li class="flex items-start gap-1.5">
+                <i class="fa-solid fa-moon text-indigo-600 mt-0.5"></i>
+                <span><strong>20:30 睡前儀式</strong>：回房放小鴨泡澡、21:00 睡前奶、白噪音拍背哄睡，等媽媽開懷歸來！</span>
+              </li>
+            </ul>
+          </div>
+          <div class="mt-4 pt-3 border-t border-purple-200 text-[11px] text-purple-900 font-bold flex items-center gap-1">
+            <i class="fa-solid fa-crown text-amber-500"></i> 爸爸單挑育兒滿分，老婆超感動
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== DAY 4 ==================== -->
+    <section id="day4" class="day-card space-y-6 pt-2">
+      <!-- Day 4 Header -->
+      <div class="bg-gradient-to-r from-emerald-800 to-teal-900 text-white rounded-3xl p-6 sm:p-7 shadow-lg flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div>
+          <div class="flex items-center gap-2 mb-2">
+            <span class="badge-pill bg-emerald-300 text-emerald-950 font-black text-xs">DAY 4</span>
+            <span class="text-emerald-200 text-xs sm:text-sm font-semibold">2026 年 9 月 28 日（一）連假休整不出遊</span>
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">在家放鬆休整 ‧ 溫馨親子慢時光</h2>
+          <p class="text-emerald-200 text-xs sm:text-sm mt-1">自然醒手作早午餐 ➔ 熟悉地墊益智積木 ➔ 舒適午睡 2 小時 ➔ 滿電迎接開工</p>
+        </div>
+        <div class="flex flex-wrap items-center gap-2">
+          <span class="bg-white/10 text-emerald-100 text-xs px-3.5 py-2 rounded-xl border border-white/20 flex items-center space-x-1.5 font-medium">
+            <i class="fa-solid fa-house-chimney-window"></i>
+            <span>不出門避開人潮與車潮</span>
+          </span>
+        </div>
+      </div>
+
+      <!-- Day 4 Three Periods -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <!-- Morning -->
+        <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between border-b border-slate-100 pb-2 mb-3">
+              <span class="badge-pill bg-emerald-100 text-emerald-800 text-xs font-bold"><i class="fa-regular fa-sun mr-1"></i>上午 (Morning)</span>
+              <span class="text-xs text-slate-400 font-medium">09:00 - 12:00</span>
+            </div>
+            <h3 class="font-extrabold text-slate-900 text-base mb-2">睡到自然醒 ＆ 舒活早午餐</h3>
+            <ul class="text-xs text-slate-600 space-y-2 leading-relaxed">
+              <li class="flex items-start gap-1.5">
+                <i class="fa-solid fa-bell-slash text-slate-400 mt-0.5"></i>
+                <span><strong>取消鬧鐘自然醒</strong>：不趕行程、不急著出門，全家在柔和陽光與舒適冷氣中醒來。</span>
+              </li>
+              <li class="flex items-start gap-1.5">
+                <i class="fa-solid fa-mug-saucer text-amber-600 mt-0.5"></i>
+                <span><strong>手作早午餐</strong>：爸媽品嚐現磨手沖咖啡與熱壓起司吐司；為 17M 女兒準備鮮奶蒸蛋與新鮮香蕉泥。</span>
+              </li>
+              <li class="flex items-start gap-1.5">
+                <i class="fa-solid fa-music text-purple-600 mt-0.5"></i>
+                <span><strong>客廳放鬆</strong>：播放輕爵士或輕柔兒歌，女兒在地墊上玩積木翻翻書。</span>
+              </li>
+            </ul>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 text-[11px] text-emerald-700 font-semibold flex items-center gap-1">
+            <i class="fa-solid fa-sun"></i> 慢活早晨，身心完全舒展
+          </div>
+        </div>
+
+        <!-- Afternoon -->
+        <div class="bg-white rounded-2xl p-5 border-2 border-emerald-200 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between border-b border-slate-100 pb-2 mb-3">
+              <span class="badge-pill bg-emerald-100 text-emerald-800 text-xs font-bold"><i class="fa-solid fa-sun mr-1"></i>下午 (Afternoon)</span>
+              <span class="text-xs text-emerald-700 font-bold">13:00 - 17:00</span>
+            </div>
+            <h3 class="font-extrabold text-slate-900 text-base mb-2">寶寶大午睡 ＆ 行李輕鬆整理</h3>
+            <ul class="text-xs text-slate-600 space-y-2 leading-relaxed">
+              <li class="flex items-start gap-1.5">
+                <i class="fa-solid fa-bed text-blue-500 mt-0.5"></i>
+                <span><strong>熟悉嬰兒床大午睡</strong>：17M 寶寶在自己最習慣的嬰兒床上酣睡 2~2.5 小時，補足連假外出消耗的體能。</span>
+              </li>
+              <li class="flex items-start gap-1.5">
+                <i class="fa-solid fa-soap text-teal-600 mt-0.5"></i>
+                <span><strong>行李歸位與洗滌</strong>：夫妻分工洗滌衣物、拆開旅行伴手禮，把家裡打理得乾乾淨淨。</span>
+              </li>
+              <li class="flex items-start gap-1.5">
+                <i class="fa-solid fa-images text-purple-600 mt-0.5"></i>
+                <span><strong>回顧旅行照片</strong>：透過本頁下方「GPS 照片故事」，將三天的實拍照片整理成回憶錄。</span>
+              </li>
+            </ul>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 text-[11px] text-emerald-700 font-semibold flex items-center gap-1">
+            <i class="fa-solid fa-battery-full text-emerald-600"></i> 家是最好的充電站，幼童安穩補眠
+          </div>
+        </div>
+
+        <!-- Evening -->
+        <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between border-b border-slate-100 pb-2 mb-3">
+              <span class="badge-pill bg-indigo-100 text-indigo-800 text-xs font-bold"><i class="fa-solid fa-moon mr-1"></i>晚上 (Evening)</span>
+              <span class="text-xs text-slate-400 font-medium">18:00 - 21:00</span>
+            </div>
+            <h3 class="font-extrabold text-slate-900 text-base mb-2">清爽晚餐 ＆ 提早入眠迎開工</h3>
+            <ul class="text-xs text-slate-600 space-y-2 leading-relaxed">
+              <li class="flex items-start gap-1.5">
+                <i class="fa-solid fa-kitchen-set text-amber-500 mt-0.5"></i>
+                <span><strong>清淡溫暖晚餐</strong>：煮手工高麗菜水餃、清蒸海魚、豆腐海帶芽湯，清爽無負擔。</span>
+              </li>
+              <li class="flex items-start gap-1.5">
+                <i class="fa-solid fa-book text-pink-500 mt-0.5"></i>
+                <span><strong>床邊繪本時光</strong>：爸爸媽媽陪女兒共讀床邊童書，講述這幾天看高雄熊熱氣球的故事。</span>
+              </li>
+              <li class="flex items-start gap-1.5">
+                <i class="fa-solid fa-star text-amber-400 mt-0.5"></i>
+                <span><strong>21:00 準時熄燈</strong>：全家元氣滿滿，圓滿收心中秋連假！</span>
+              </li>
+            </ul>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 text-[11px] text-slate-400 flex items-center gap-1">
+            <i class="fa-solid fa-circle-check text-emerald-500"></i> 連假零疲勞，工作生活平衡滿分
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- 3 MAJOR MID-AUTUMN ACTIVITIES SPOTLIGHT -->
+    <section id="venues" class="pt-6 space-y-6">
+      <div class="text-center max-w-2xl mx-auto">
+        <span class="badge-pill bg-amber-100 text-amber-800 font-bold text-xs">節慶活動指南</span>
+        <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mt-1">2026 中秋限定 ‧ 高屏三大特色活動解析</h2>
+        <div class="w-12 h-1 bg-amber-500 mx-auto mt-2 rounded-full"></div>
+        <p class="text-xs sm:text-sm text-slate-500 mt-2">依據活動懶人包資料，兼顧 17M 幼兒體能之最佳觀賞攻略</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <!-- Hot Air Balloon -->
+        <div class="bg-white rounded-3xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="img-zoom-container mb-4 h-48 bg-slate-100 relative">
+              <img src="https://images.unsplash.com/photo-1507608616759-54f48f0af0ee?auto=format&fit=crop&w=800&q=80" alt="田寮月世界熱氣球" class="w-full h-full object-cover">
+              <span class="absolute top-3 left-3 bg-purple-900/80 backdrop-blur-md text-white text-xs font-bold px-2.5 py-1 rounded-lg">
+                <i class="fa-solid fa-hot-air-balloon text-amber-300 mr-1"></i>田寮月世界
+              </span>
+            </div>
+            <div class="flex items-center justify-between text-xs text-slate-500 mb-2 font-medium">
+              <span>9/25 ~ 9/28 連假限定</span>
+              <span class="text-purple-600 font-bold">28公尺高雄熊熱氣球</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">高雄愛‧月熱氣球 ＆ 月球漫步市集</h3>
+            <p class="text-xs text-slate-600 leading-relaxed mb-4">
+              招牌高雄熊熱氣球於田寮月世界升空！市集時間 11:00~18:00，集結在地小農特產與文創手作，完成任務可獲得限量月世界紀念扇。
+            </p>
+            <div class="bg-purple-50 rounded-xl p-3 text-xs text-purple-900 space-y-1">
+              <div class="font-bold flex items-center gap-1"><i class="fa-solid fa-circle-info"></i> 17M 幼兒貼心建議：</div>
+              <p>熱氣球噴火燃燒聲響大且吊籃較高，<strong>幼兒在地面近距離觀賞拍照打卡最安全、最舒適！</strong></p>
+            </div>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+            <span>繫留體驗 500元/人</span>
+            <a href="https://www.google.com/maps/search/?api=1&query=田寮月世界地景公園" target="_blank" class="text-purple-600 hover:text-purple-800 font-bold flex items-center gap-1">導航至現場 <i class="fa-solid fa-arrow-right text-[10px]"></i></a>
+          </div>
+        </div>
+
+        <!-- Pingtung West Market -->
+        <div class="bg-white rounded-3xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="img-zoom-container mb-4 h-48 bg-slate-100 relative">
+              <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80" alt="屏東西市場" class="w-full h-full object-cover">
+              <span class="absolute top-3 left-3 bg-teal-900/80 backdrop-blur-md text-white text-xs font-bold px-2.5 py-1 rounded-lg">
+                <i class="fa-solid fa-snowflake text-cyan-300 mr-1"></i>全館空調
+              </span>
+            </div>
+            <div class="flex items-center justify-between text-xs text-slate-500 mb-2 font-medium">
+              <span>9/25 ~ 9/28 (15:00~20:00)</span>
+              <span class="text-teal-600 font-bold">即刻月圓．好市</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">屏東西市場「即刻月圓．好市」</h3>
+            <p class="text-xs text-slate-600 leading-relaxed mb-4">
+              全台首座綠建築現代化室內公有市場！全館擁有中央空調、無障礙平整步道，中秋規劃室內戶外雙舞台藝文演出與文創輕食市集。
+            </p>
+            <div class="bg-teal-50 rounded-xl p-3 text-xs text-teal-900 space-y-1">
+              <div class="font-bold flex items-center gap-1"><i class="fa-solid fa-baby-carriage"></i> 17M 幼兒貼心建議：</div>
+              <p>全館冷氣涼爽、地面防滑乾淨，推嬰兒車逛街完全不曬太陽，還可採買新鮮現切屏東在地多汁水果！</p>
+            </div>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+            <span>屏東市和平路西市場</span>
+            <a href="https://www.google.com/maps/search/?api=1&query=屏東西市場" target="_blank" class="text-teal-600 hover:text-teal-800 font-bold flex items-center gap-1">導航至現場 <i class="fa-solid fa-arrow-right text-[10px]"></i></a>
+          </div>
+        </div>
+
+        <!-- Wancang St Market -->
+        <div class="bg-white rounded-3xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="img-zoom-container mb-4 h-48 bg-slate-100 relative">
+              <img src="https://images.unsplash.com/photo-1533900298318-6b8da08a523e?auto=format&fit=crop&w=800&q=80" alt="萬倉街市集" class="w-full h-full object-cover">
+              <span class="absolute top-3 left-3 bg-indigo-900/80 backdrop-blur-md text-white text-xs font-bold px-2.5 py-1 rounded-lg">
+                <i class="fa-solid fa-umbrella text-amber-300 mr-1"></i>高架橋下遮陰
+              </span>
+            </div>
+            <div class="flex items-center justify-between text-xs text-slate-500 mb-2 font-medium">
+              <span>9/25 ~ 9/27 (16:00~21:00)</span>
+              <span class="text-indigo-600 font-bold">NEKO MARKET 百攤</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">屏東萬倉街 NEKO MARKET 市集</h3>
+            <p class="text-xs text-slate-600 leading-relaxed mb-4">
+              位於屏東市萬倉街鐵路高架橋下廊道，集結超過百攤文創手作、特色品牌美食，並規劃萌寵變裝互動與手作 DIY。
+            </p>
+            <div class="bg-indigo-50 rounded-xl p-3 text-xs text-indigo-900 space-y-1">
+              <div class="font-bold flex items-center gap-1"><i class="fa-solid fa-paw"></i> 17M 幼兒貼心建議：</div>
+              <p>高架鐵道下完全遮蔽太陽、通風良好，17M 小寶寶可以在爸爸媽媽牽引下觀賞可愛狗狗貓咪與特色手作。
+            </div>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+            <span>屏東市萬倉街廊道</span>
+            <a href="https://www.google.com/maps/search/?api=1&query=屏東市萬倉街" target="_blank" class="text-indigo-600 hover:text-indigo-800 font-bold flex items-center gap-1">導航至現場 <i class="fa-solid fa-arrow-right text-[10px]"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- BABY 17M TIPS & DAD SOLO SOP CHECKLIST -->
+    <section id="baby-tips" class="pt-6 space-y-6">
+      <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-md">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-slate-100 pb-4 mb-6 gap-2">
+          <div class="flex items-center space-x-3">
+            <div class="w-10 h-10 rounded-2xl bg-pink-100 text-pink-600 flex items-center justify-center text-xl">
+              <i class="fa-solid fa-baby"></i>
+            </div>
+            <div>
+              <h2 class="text-xl sm:text-2xl font-black text-slate-900">17 個月大幼兒出遊指南 ＆ 爸爸單挑 SOP</h2>
+              <p class="text-xs text-slate-500">掌握幼兒作息與安全飲食，旅行從容愜意零崩潰</p>
+            </div>
+          </div>
+          <span class="badge-pill bg-purple-100 text-purple-800 text-xs self-start sm:self-auto font-bold">
+            <i class="fa-solid fa-clipboard-check mr-1 text-purple-600"></i>可直接在網頁上勾選
+          </span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Column 1: Food & Feeding -->
+          <div class="space-y-3">
+            <h3 class="text-sm font-black text-purple-900 flex items-center gap-1.5 border-b border-purple-100 pb-2">
+              <i class="fa-solid fa-bowl-food text-amber-500"></i> 17M 飲食與餐廳守則
+            </h3>
+            <div class="space-y-2 text-xs text-slate-600">
+              <label class="flex items-start gap-2 p-2 rounded-xl hover:bg-slate-50 cursor-pointer">
+                <input type="checkbox" class="mt-0.5 rounded text-purple-600 focus:ring-purple-500">
+                <span><strong>食物剪隨身帶</strong>：外食烏龍麵、雞肉、青菜剪成 1~2 公分小段，方便咀嚼吞嚥。</span>
+              </label>
+              <label class="flex items-start gap-2 p-2 rounded-xl hover:bg-slate-50 cursor-pointer">
+                <input type="checkbox" class="mt-0.5 rounded text-purple-600 focus:ring-purple-500">
+                <span><strong>必備軟質副食</strong>：蒸蛋（茶碗蒸）、白粥、蒸地瓜、豆腐、無糖優格與香蕉。</span>
+              </label>
+              <label class="flex items-start gap-2 p-2 rounded-xl hover:bg-slate-50 cursor-pointer">
+                <input type="checkbox" class="mt-0.5 rounded text-purple-600 focus:ring-purple-500">
+                <span><strong>矽膠圍兜 ＆ 吸盤碗</strong>：避免外食弄髒衣服，用餐後濕紙巾隨手擦拭乾淨。</span>
+              </label>
+              <label class="flex items-start gap-2 p-2 rounded-xl hover:bg-slate-50 cursor-pointer">
+                <input type="checkbox" class="mt-0.5 rounded text-purple-600 focus:ring-purple-500">
+                <span><strong>常溫寶寶粥備用</strong>：隨身攜帶 2 包常溫寶寶粥，以防餐廳排隊過久寶寶肚子餓。</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Column 2: Dad Solo Guide on 9/27 -->
+          <div class="space-y-3 bg-purple-50/60 p-4 rounded-2xl border border-purple-200/80">
+            <h3 class="text-sm font-black text-purple-950 flex items-center gap-1.5 border-b border-purple-200 pb-2">
+              <i class="fa-solid fa-person-shelter text-purple-600"></i> 9/27 晚上爸爸單挑帶娃 SOP
+            </h3>
+            <div class="space-y-2 text-xs text-purple-900">
+              <label class="flex items-start gap-2 p-1.5 rounded-lg hover:bg-purple-100/60 cursor-pointer">
+                <input type="checkbox" class="mt-0.5 rounded text-purple-600 focus:ring-purple-500">
+                <span><strong>鎖定義享天地 5F 育嬰室</strong>：設有熱水機（定溫 70°C 泡奶）、獨立沙發哺乳室與軟墊尿布台。</span>
+              </label>
+              <label class="flex items-start gap-2 p-1.5 rounded-lg hover:bg-purple-100/60 cursor-pointer">
+                <input type="checkbox" class="mt-0.5 rounded text-purple-600 focus:ring-purple-500">
+                <span><strong>單手餵食輕鬆餐</strong>：選丸龜製麵原味清湯烏龍麵＋茶碗蒸，快速好餵食、不油膩。</span>
+              </label>
+              <label class="flex items-start gap-2 p-1.5 rounded-lg hover:bg-purple-100/60 cursor-pointer">
+                <input type="checkbox" class="mt-0.5 rounded text-purple-600 focus:ring-purple-500">
+                <span><strong>安全推車不離手</strong>：商城內全程扣上五點式安全帶，散步看展示小火車不落地奔跑。</span>
+              </label>
+              <label class="flex items-start gap-2 p-1.5 rounded-lg hover:bg-purple-100/60 cursor-pointer">
+                <input type="checkbox" class="mt-0.5 rounded text-purple-600 focus:ring-purple-500">
+                <span><strong>20:30 洗澡哄睡一條龍</strong>：回房放洗澡水、塗乳液穿睡衣，21:00 喝睡前奶伴隨白噪音入睡。</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Column 3: Packing Checklist -->
+          <div class="space-y-3">
+            <h3 class="text-sm font-black text-purple-900 flex items-center gap-1.5 border-b border-purple-100 pb-2">
+              <i class="fa-solid fa-suitcase-rolling text-emerald-600"></i> 必備育兒防護裝備
+            </h3>
+            <div class="space-y-2 text-xs text-slate-600">
+              <label class="flex items-start gap-2 p-2 rounded-xl hover:bg-slate-50 cursor-pointer">
+                <input type="checkbox" class="mt-0.5 rounded text-purple-600 focus:ring-purple-500">
+                <span><strong>推車充電夾扇</strong>：南台灣中午仍熱，推車夾扇可維持微風涼爽、預防寶寶煩躁熱汗。</span>
+              </label>
+              <label class="flex items-start gap-2 p-2 rounded-xl hover:bg-slate-50 cursor-pointer">
+                <input type="checkbox" class="mt-0.5 rounded text-purple-600 focus:ring-purple-500">
+                <span><strong>嬰幼兒天然防蚊液</strong>：走訪月世界及戶外綠地前務必噴灑四肢。</span>
+              </label>
+              <label class="flex items-start gap-2 p-2 rounded-xl hover:bg-slate-50 cursor-pointer">
+                <input type="checkbox" class="mt-0.5 rounded text-purple-600 focus:ring-purple-500">
+                <span><strong>安撫巾 ＆ 喜愛布偶</strong>：外出過夜與車上午睡時提供熟悉安全感。</span>
+              </label>
+              <label class="flex items-start gap-2 p-2 rounded-xl hover:bg-slate-50 cursor-pointer">
+                <input type="checkbox" class="mt-0.5 rounded text-purple-600 focus:ring-purple-500">
+                <span><strong>備用衣物 2 套隨身包</strong>：避免流汗或弄髒，可隨時替換保持乾爽。</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- PHOTO STORY SECTION (GPS & TIME EXIF ALBUM) -->
+    <section id="photo-story-section" class="pt-6 space-y-6 scroll-mt-20">
+      <div class="flex flex-col md:flex-row md:items-end justify-between border-b-2 border-purple-500 pb-4 gap-4">
+        <div>
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="badge-pill bg-purple-100 text-purple-800 font-bold text-sm">
+              <i class="fa-solid fa-camera-retro mr-1.5 text-purple-600"></i>GPS 智慧旅行相簿
+            </span>
+            <span class="badge-pill bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs">
+              <i class="fa-solid fa-shield-halved mr-1 text-emerald-600"></i>純前端本地解析 ‧ 隱私不外洩
+            </span>
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mt-2">📸 旅行照片故事 ‧ 智慧回憶錄</h2>
+          <p class="text-slate-600 text-xs sm:text-sm mt-1 max-w-2xl leading-relaxed">
+            上傳手機實拍照片，系統自動以 <strong>GPS 經緯度與拍攝時間</strong> 智慧比對行程景點（高雄迎賓、大港橋、屏東森林總圖、西市場、田寮熱氣球、義享天地、在家休整），並自動生成 AI 動態旅行日記！
+          </p>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="flex flex-wrap items-center gap-2">
+          <input type="file" id="photo-file-input" multiple accept="image/*" class="hidden" onchange="handlePhotoUpload(event)">
+          <button type="button" onclick="document.getElementById('photo-file-input').click()" class="bg-purple-600 hover:bg-purple-700 active:bg-purple-800 text-white font-semibold text-xs sm:text-sm px-4 py-2.5 rounded-xl transition shadow-sm flex items-center space-x-1.5 cursor-pointer">
+            <i class="fa-solid fa-cloud-arrow-up"></i>
+            <span>上傳旅行照片</span>
+          </button>
+          <button type="button" onclick="loadDemoPhotos()" class="bg-amber-500 hover:bg-amber-600 active:bg-amber-700 text-white font-semibold text-xs sm:text-sm px-4 py-2.5 rounded-xl transition shadow-sm flex items-center space-x-1.5 cursor-pointer">
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+            <span>載入示範照片 (Demo)</span>
+          </button>
+          <button type="button" onclick="clearAllPhotos()" class="bg-slate-100 hover:bg-slate-200 active:bg-slate-300 text-slate-600 font-semibold text-xs sm:text-sm px-3 py-2.5 rounded-xl transition flex items-center space-x-1.5 cursor-pointer">
+            <i class="fa-solid fa-trash-can"></i>
+            <span>清空</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Drag & Drop Upload Zone -->
+      <div id="photo-drop-zone" class="border-2 border-dashed border-purple-200 hover:border-purple-400 bg-purple-50/40 rounded-2xl p-6 text-center cursor-pointer transition flex flex-col items-center justify-center space-y-2" onclick="document.getElementById('photo-file-input').click()">
+        <div class="w-12 h-12 rounded-2xl bg-purple-100 text-purple-600 flex items-center justify-center text-xl shadow-xs">
+          <i class="fa-solid fa-images"></i>
+        </div>
+        <div class="text-sm font-bold text-slate-800">
+          拖曳照片至此，或點擊選取多張手機照片（支援 JPG, PNG, WebP, HEIC）
+        </div>
+        <p class="text-xs text-slate-500">
+          系統自動擷取照片 EXIF 中的 GPS 經緯度與拍攝時間，免手動輸入！
+        </p>
+        <div id="upload-status" class="hidden text-xs font-semibold text-purple-700 bg-purple-100 px-3 py-1 rounded-full">
+          <i class="fa-solid fa-spinner fa-spin mr-1"></i>正在解析照片 EXIF 資訊...
+        </div>
+      </div>
+
+      <!-- Story Modes Tabs -->
+      <div class="space-y-3">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div class="bg-slate-100 p-1.5 rounded-2xl inline-flex flex-wrap gap-1 border border-slate-200">
+            <button id="tab-timeline" onclick="switchStoryMode('timeline')" class="story-tab active bg-white text-purple-700 shadow-xs px-4 py-2 rounded-xl text-xs sm:text-sm font-bold flex items-center space-x-1.5 transition">
+              <i class="fa-solid fa-timeline"></i>
+              <span>⏰ 依時間軸故事</span>
+            </button>
+            <button id="tab-itinerary" onclick="switchStoryMode('itinerary')" class="story-tab text-slate-600 hover:text-slate-900 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold flex items-center space-x-1.5 transition">
+              <i class="fa-solid fa-map-pin"></i>
+              <span>📍 依行程景點故事</span>
+            </button>
+            <button id="tab-people" onclick="switchStoryMode('people')" class="story-tab text-slate-600 hover:text-slate-900 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold flex items-center space-x-1.5 transition">
+              <i class="fa-solid fa-users"></i>
+              <span>👨‍👩‍👧 依人物主角故事</span>
+            </button>
+          </div>
+
+          <div id="photo-counter-info" class="text-xs text-slate-500 font-medium px-2">
+            <!-- Populated via JS -->
+          </div>
+        </div>
+
+        <!-- People Sub-filters -->
+        <div id="people-subfilters" class="hidden bg-purple-50/70 border border-purple-200/80 rounded-2xl p-3 flex flex-wrap items-center gap-2">
+          <span class="text-xs font-bold text-purple-900 mr-1"><i class="fa-solid fa-filter mr-1"></i>聚焦主角：</span>
+          <button onclick="setPersonFilter('all', this)" class="person-btn active bg-purple-600 text-white text-xs px-3.5 py-1.5 rounded-xl font-semibold transition shadow-xs">全部主角</button>
+          <button onclick="setPersonFilter('小寶貝', this)" class="person-btn bg-white hover:bg-purple-100 text-purple-900 border border-purple-200 text-xs px-3.5 py-1.5 rounded-xl font-semibold transition">👧 小寶貝 (17M)</button>
+          <button onclick="setPersonFilter('爸爸', this)" class="person-btn bg-white hover:bg-purple-100 text-purple-900 border border-purple-200 text-xs px-3.5 py-1.5 rounded-xl font-semibold transition">👨 爸爸 (單挑帶娃/自駕)</button>
+          <button onclick="setPersonFilter('媽媽', this)" class="person-btn bg-white hover:bg-purple-100 text-purple-900 border border-purple-200 text-xs px-3.5 py-1.5 rounded-xl font-semibold transition">👩 媽媽 (放鬆美拍/聚餐)</button>
+          <button onclick="setPersonFilter('丈母娘與家人', this)" class="person-btn bg-white hover:bg-purple-100 text-purple-900 border border-purple-200 text-xs px-3.5 py-1.5 rounded-xl font-semibold transition">👵 丈母娘與家人</button>
+          <button onclick="setPersonFilter('全家福', this)" class="person-btn bg-white hover:bg-purple-100 text-purple-900 border border-purple-200 text-xs px-3.5 py-1.5 rounded-xl font-semibold transition">👨‍👩‍👧 甜蜜全家福</button>
+        </div>
+      </div>
+
+      <!-- AI Smart Narrative Story Card -->
+      <div class="bg-gradient-to-br from-slate-900 via-purple-950 to-indigo-950 text-white rounded-3xl p-6 sm:p-8 shadow-xl relative overflow-hidden border border-purple-800/40">
+        <div class="absolute -top-16 -right-16 w-56 h-56 bg-amber-500/15 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="relative z-10 space-y-3">
+          <div class="flex flex-wrap items-center justify-between gap-3">
+            <span class="badge-pill bg-purple-500/30 text-purple-200 border border-purple-400/30 text-xs font-semibold">
+              <i class="fa-solid fa-feather-pointed mr-1 text-amber-300"></i>AI 動態旅行故事日記
+            </span>
+            <button onclick="copyStoryText()" class="bg-white/10 hover:bg-white/20 text-white text-xs px-3.5 py-1.5 rounded-xl border border-white/20 transition flex items-center space-x-1.5 cursor-pointer">
+              <i class="fa-regular fa-copy"></i>
+              <span id="copy-btn-label">複製日記文字</span>
+            </button>
+          </div>
+          <h3 id="narrative-title" class="text-xl sm:text-2xl font-black text-amber-300 tracking-tight">
+            <!-- Populated via JS -->
+          </h3>
+          <p id="narrative-body" class="text-slate-200 text-xs sm:text-sm leading-relaxed whitespace-pre-line font-normal">
+            <!-- Populated via JS -->
+          </p>
+          <div id="narrative-meta" class="pt-3 border-t border-white/15 text-[11px] text-purple-200/70 flex flex-wrap items-center gap-3">
+            <!-- Populated via JS -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Rendered Photos Display Area -->
+      <div id="photos-display-container">
+        <!-- Rendered dynamically -->
+      </div>
+    </section>
+
+
+    <!-- INTERACTIVE MAP & NAVIGATION SECTION -->
+    <section id="map-section" class="pt-4 space-y-6">
+      <div class="text-center max-w-2xl mx-auto">
+        <span class="badge-pill bg-teal-100 text-teal-800 font-bold text-xs">導航中心</span>
+        <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mt-1">Google 地圖 ‧ 高屏自駕路線標註</h2>
+        <div class="w-12 h-1 bg-teal-500 mx-auto mt-2 rounded-full"></div>
+        <p class="text-slate-600 mt-2 text-xs sm:text-sm">
+          點擊地圖標記可查看各景點資訊；點擊下方「一鍵開啟手機導航」可直接啟動 Google Maps App 開始導航！
+        </p>
+      </div>
+
+      <!-- Leaflet Interactive Map Container -->
+      <div class="bg-white p-3 rounded-2xl border border-slate-200 shadow-md">
+        <div id="map"></div>
+      </div>
+
+      <!-- Navigation Routes Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <!-- Day 1 Route Card -->
+        <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="badge-pill bg-purple-100 text-purple-800 font-bold text-xs">Day 1 港都迎賓路線</span>
+            </div>
+            <h3 class="font-bold text-slate-900 text-base mb-1">高雄迎賓 ➔ 駁二大港橋 ➔ 棧貳庫</h3>
+            <p class="text-xs text-slate-600 mb-4">
+              14:00 丈母娘送回高雄，下午小憩後至大港橋與輕軌欣賞落日餘暉，外帶鹽埕美味回房自在吃。
+            </p>
+          </div>
+          <a href="https://www.google.com/maps/dir/?api=1&origin=Kaohsiung&destination=棧貳庫KW2&waypoints=駁二藝術特區|大港橋" target="_blank" class="w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold text-xs sm:text-sm py-2 px-3 rounded-xl text-center flex items-center justify-center space-x-1.5 transition shadow-sm">
+            <i class="fa-solid fa-diamond-turn-right"></i>
+            <span>開啟 Day 1 導航路線</span>
+          </a>
+        </div>
+
+        <!-- Day 2 Route Card -->
+        <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="badge-pill bg-teal-100 text-teal-800 font-bold text-xs">Day 2 屏東質感路線</span>
+            </div>
+            <h3 class="font-bold text-slate-900 text-base mb-1">屏東森林總圖 ➔ 勝利星村 ➔ 西市場 ➔ 萬倉街</h3>
+            <p class="text-xs text-slate-600 mb-4">
+              走訪森林圖書館與老屋庭園午餐，下午逛全冷氣綠建築西市場與高架鐵路橋下 NEKO MARKET。
+            </p>
+          </div>
+          <a href="https://www.google.com/maps/dir/?api=1&origin=Kaohsiung&destination=屏東西市場&waypoints=屏東縣立圖書館總館|勝利星村創意生活園區|萬倉街" target="_blank" class="w-full bg-teal-600 hover:bg-teal-700 text-white font-semibold text-xs sm:text-sm py-2 px-3 rounded-xl text-center flex items-center justify-center space-x-1.5 transition shadow-sm">
+            <i class="fa-solid fa-diamond-turn-right"></i>
+            <span>開啟 Day 2 導航路線</span>
+          </a>
+        </div>
+
+        <!-- Day 3 Route Card -->
+        <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="badge-pill bg-amber-100 text-amber-800 font-bold text-xs">Day 3 熱氣球 & 約會路線</span>
+            </div>
+            <h3 class="font-bold text-slate-900 text-base mb-1">田寮月世界 ➔ 土雞城 ➔ 市區 ➔ 義享天地</h3>
+            <p class="text-xs text-slate-600 mb-4">
+              上午朝聖 28 公尺高雄熊熱氣球，傍晚送媽媽赴家族聚餐，晚上父女在義享天地享受甜蜜時光。
+            </p>
+          </div>
+          <a href="https://www.google.com/maps/dir/?api=1&origin=Kaohsiung&destination=義享天地&waypoints=田寮月世界" target="_blank" class="w-full bg-amber-600 hover:bg-amber-700 text-white font-semibold text-xs sm:text-sm py-2 px-3 rounded-xl text-center flex items-center justify-center space-x-1.5 transition shadow-sm">
+            <i class="fa-solid fa-diamond-turn-right"></i>
+            <span>開啟 Day 3 導航路線</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-slate-900 text-slate-400 py-12 mt-16 border-t border-slate-800 text-center text-xs space-y-3">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="text-white font-bold text-base mb-1">🌕 祝大衛全家中秋連假平安順心 ‧ 親子旅行甜蜜美滿！</div>
+      <p class="text-slate-400">專為夫妻 2 人與 17 個月大可愛女兒量身打造 ‧ 隨手自手機存取網頁或一鍵導航</p>
+      <div class="pt-4 flex justify-center space-x-4 text-xs text-slate-500">
+        <a href="#overview" class="hover:text-white transition">回頂端</a>
+        <span>•</span>
+        <a href="#day1" class="hover:text-white transition">Day 1 迎賓</a>
+        <span>•</span>
+        <a href="#day2" class="hover:text-white transition">Day 2 屏東</a>
+        <span>•</span>
+        <a href="#day3" class="hover:text-white transition">Day 3 熱氣球</a>
+        <span>•</span>
+        <a href="#day4" class="hover:text-white transition">Day 4 在家休整</a>
+        <span>•</span>
+        <a href="#map-section" class="hover:text-white transition">地圖導航</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile Bottom Sticky Quick Navigation -->
+  <div class="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-slate-200 px-3 py-2 flex justify-around items-center text-[11px] font-medium text-slate-600 shadow-lg no-print">
+    <a href="#day1" class="flex flex-col items-center py-1 hover:text-purple-600">
+      <i class="fa-solid fa-calendar-day text-base"></i>
+      <span class="mt-0.5">D1迎賓</span>
+    </a>
+    <a href="#day2" class="flex flex-col items-center py-1 hover:text-purple-600">
+      <i class="fa-solid fa-tree text-base"></i>
+      <span class="mt-0.5">D2屏東</span>
+    </a>
+    <a href="#day3" class="flex flex-col items-center py-1 hover:text-purple-600">
+      <i class="fa-solid fa-hot-air-balloon text-base"></i>
+      <span class="mt-0.5">D3熱氣球</span>
+    </a>
+    <a href="#day4" class="flex flex-col items-center py-1 hover:text-emerald-600 font-bold">
+      <i class="fa-solid fa-couch text-base"></i>
+      <span class="mt-0.5">D4休整</span>
+    </a>
+    <a href="#baby-tips" class="flex flex-col items-center py-1 hover:text-pink-600">
+      <i class="fa-solid fa-baby text-base"></i>
+      <span class="mt-0.5">清單</span>
+    </a>
+    <a href="#map-section" class="flex flex-col items-center py-1 text-teal-600 font-bold">
+      <i class="fa-solid fa-map-location-dot text-base"></i>
+      <span class="mt-0.5">地圖</span>
+    </a>
+  </div>
+
+  <!-- Scripts: Mobile Menu, Day Filter, GPS Photos & Leaflet Map -->
+  <script>
+    // Mobile Menu Toggle
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+    // Day Filter
+    function filterDay(day) {
+      const cards = document.querySelectorAll('.day-card');
+      const btns = document.querySelectorAll('.filter-btn');
+      
+      btns.forEach(b => {
+        b.classList.remove('bg-purple-700', 'text-white', 'active');
+        b.classList.add('bg-white', 'text-slate-700');
+      });
+
+      const activeBtn = document.getElementById('btn-' + day);
+      if (activeBtn) {
+        activeBtn.classList.remove('bg-white', 'text-slate-700');
+        activeBtn.classList.add('bg-purple-700', 'text-white', 'active');
+      }
+
+      if (day === 'all') {
+        cards.forEach(c => c.classList.remove('hidden'));
+      } else {
+        cards.forEach(c => c.classList.add('hidden'));
+        const target = document.getElementById(day);
+        if (target) target.classList.remove('hidden');
+      }
+    }
+
+    // ==========================================
+    // 📸 TRAVEL PHOTO STORY & GPS LOGIC
+    // ==========================================
+    const ITINERARY_STOPS = [
+      { id: "arrival", name: "高雄左營 ‧ 丈母娘送抵接車點", lat: 22.6870, lng: 120.3015, day: 1, period: "afternoon", icon: "fa-car-side" },
+      { id: "pier2", name: "駁二藝術特區 ＆ 大港橋水岸輕軌", lat: 22.6198, lng: 120.2818, day: 1, period: "afternoon", icon: "fa-bridge-water" },
+      { id: "kw2", name: "棧貳庫 KW2 水岸港景賞月", lat: 22.6178, lng: 120.2778, day: 1, period: "evening", icon: "fa-moon" },
+      { id: "pt_lib", name: "屏東縣立圖書館總館 (森林圖書館)", lat: 22.6845, lng: 120.4932, day: 2, period: "morning", icon: "fa-book-open-reader" },
+      { id: "shengli", name: "屏東勝利星村創意生活園區", lat: 22.6775, lng: 120.4855, day: 2, period: "morning", icon: "fa-utensils" },
+      { id: "west_mkt", name: "屏東西市場 (即刻月圓．好市)", lat: 22.6738, lng: 120.4802, day: 2, period: "afternoon", icon: "fa-snowflake" },
+      { id: "wancang", name: "屏東萬倉街 NEKO MARKET (高架橋下市集)", lat: 22.6685, lng: 120.4878, day: 2, period: "afternoon", icon: "fa-umbrella" },
+      { id: "moon_world", name: "田寮月世界 (28米高雄熊熱氣球升空)", lat: 22.8856, lng: 120.3892, day: 3, period: "morning", icon: "fa-hot-air-balloon" },
+      { id: "chicken", name: "田寮土雞城 (蒜頭雞湯泡飯 & 軟麵線)", lat: 22.8885, lng: 120.3920, day: 3, period: "morning", icon: "fa-drumstick-bite" },
+      { id: "esky", name: "義享天地 (爸爸＋17M女兒約會基地)", lat: 22.6568, lng: 120.3056, day: 3, period: "evening", icon: "fa-person-breastfeeding" },
+      { id: "home", name: "溫暖家園 (9/28 連假放鬆休整日)", lat: 22.6520, lng: 120.3120, day: 4, period: "all", icon: "fa-house-chimney" }
+    ];
+
+    const DEMO_PHOTOS = [
+      {
+        id: "demo_1",
+        title: "丈母娘平安開車送抵 ‧ 港都溫暖大擁抱",
+        imgUrl: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1000&q=80",
+        lat: 22.6870,
+        lng: 120.3015,
+        dateTaken: "2026-09-25T14:10:00",
+        spotId: "arrival",
+        spotName: "高雄左營 ‧ 丈母娘送抵接車點",
+        tags: ["丈母娘與家人", "媽媽", "小寶貝", "全家福"],
+        caption: "丈母娘一路辛苦開車平安將老婆與 17M 小女兒送抵高雄！爸爸熱情接過厚重行李與小推車，並給小女兒一個滿滿的擁抱，連假正式溫馨啟航。"
+      },
+      {
+        id: "demo_2",
+        title: "駁二大港橋 ‧ 海風吹拂與輕軌初體驗",
+        imgUrl: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1000&q=80",
+        lat: 22.6198,
+        lng: 120.2818,
+        dateTaken: "2026-09-25T16:45:00",
+        spotId: "pier2",
+        spotName: "駁二藝術特區 ＆ 大港橋水岸輕軌",
+        tags: ["小寶貝", "媽媽", "爸爸", "全家福"],
+        caption: "午後夕陽灑在大港橋水岸，推著嬰兒車一路平緩無障礙。小寶貝眼睛亮晶晶地看著綠色輕軌電車滑過水岸，一家三口吹著舒爽海風。"
+      },
+      {
+        id: "demo_3",
+        title: "屏東森林總圖 ‧ 1F 兒童地墊繪本時光",
+        imgUrl: "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=1000&q=80",
+        lat: 22.6845,
+        lng: 120.4932,
+        dateTaken: "2026-09-26T10:30:00",
+        spotId: "pt_lib",
+        spotName: "屏東縣立圖書館總館 (森林圖書館)",
+        tags: ["小寶貝", "媽媽"],
+        caption: "被千棵樟樹環抱的森林圖書館！脫下鞋子在 1F 木地板兒童專區，小女兒坐在厚軟地毯上翻著色彩斑斕的厚紙布書，冷氣舒適、環境安靜。"
+      },
+      {
+        id: "demo_4",
+        title: "屏東西市場 ‧ 綠建築吹冷氣逛中秋好市",
+        imgUrl: "https://images.unsplash.com/photo-1488459716781-31db52582fe9?auto=format&fit=crop&w=1000&q=80",
+        lat: 22.6738,
+        lng: 120.4802,
+        dateTaken: "2026-09-26T15:20:00",
+        spotId: "west_mkt",
+        spotName: "屏東西市場 (即刻月圓．好市)",
+        tags: ["媽媽", "小寶貝", "爸爸"],
+        caption: "全新落成的屏東西市場中央空調極度涼爽，地面一塵不染！媽媽優雅逛著『即刻月圓．好市』文創攤位，爸爸買了現切無籽芭樂餵寶寶。"
+      },
+      {
+        id: "demo_5",
+        title: "田寮月世界 ‧ 28米巨萌高雄熊熱氣球",
+        imgUrl: "https://images.unsplash.com/photo-1507608616759-54f48f0af0ee?auto=format&fit=crop&w=1000&q=80",
+        lat: 22.8856,
+        lng: 120.3892,
+        dateTaken: "2026-09-27T10:15:00",
+        spotId: "moon_world",
+        spotName: "田寮月世界 (28米高雄熊熱氣球升空)",
+        tags: ["全家福", "小寶貝", "爸爸", "媽媽"],
+        caption: "28 公尺高的高雄熊造型熱氣球在惡地奇景前緩緩升空！小寶貝在推車上指著天空的大熊熊咿咿呀呀，拍下本趟連假最吸睛的合照。"
+      },
+      {
+        id: "demo_6",
+        title: "義享天地 ‧ 爸爸一對一帶娃浪漫約會",
+        imgUrl: "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=1000&q=80",
+        lat: 22.6568,
+        lng: 120.3056,
+        dateTaken: "2026-09-27T18:40:00",
+        spotId: "esky",
+        spotName: "義享天地 (爸爸＋17M女兒約會基地)",
+        tags: ["爸爸", "小寶貝"],
+        caption: "老婆放心赴家族聚餐，爸爸單挑 17M 女兒大獲全勝！烏龍麵剪成小段搭配現蒸茶碗蒸，餵得乾乾淨淨；餐後牽著手在 5F 看模型小火車。"
+      },
+      {
+        id: "demo_7",
+        title: "在家休整 ‧ 客廳地墊放鬆 ＆ 飽足午睡",
+        imgUrl: "https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=1000&q=80",
+        lat: 22.6520,
+        lng: 120.3120,
+        dateTaken: "2026-09-28T14:30:00",
+        spotId: "home",
+        spotName: "溫暖家園 (9/28 連假放鬆休整日)",
+        tags: ["小寶貝", "爸爸", "媽媽", "全家福"],
+        caption: "連假最後一天不出門避開人車潮！全家在客廳地墊上悠閒砌積木、聽輕音樂，小女兒在自己的嬰兒床上熟睡 2 小時，充飽電迎接收假。"
+      }
+    ];
+
+    let userPhotos = [];
+    let currentStoryMode = 'timeline';
+    let currentPersonFilter = 'all';
+
+    function getActivePhotos() {
+      return userPhotos.length > 0 ? userPhotos : DEMO_PHOTOS;
+    }
+
+    function switchStoryMode(mode) {
+      currentStoryMode = mode;
+      document.querySelectorAll('.story-tab').forEach(b => {
+        b.classList.remove('active', 'bg-white', 'text-purple-700', 'shadow-xs');
+        b.classList.add('text-slate-600');
+      });
+      const activeBtn = document.getElementById('tab-' + mode);
+      if (activeBtn) {
+        activeBtn.classList.remove('text-slate-600');
+        activeBtn.classList.add('active', 'bg-white', 'text-purple-700', 'shadow-xs');
+      }
+
+      const peopleSub = document.getElementById('people-subfilters');
+      if (mode === 'people') {
+        peopleSub.classList.remove('hidden');
+      } else {
+        peopleSub.classList.add('hidden');
+      }
+
+      renderPhotoStory();
+    }
+
+    function setPersonFilter(person, btn) {
+      currentPersonFilter = person;
+      document.querySelectorAll('.person-btn').forEach(b => {
+        b.classList.remove('active', 'bg-purple-600', 'text-white', 'shadow-xs');
+        b.classList.add('bg-white', 'text-purple-900');
+      });
+      btn.classList.remove('bg-white', 'text-purple-900');
+      btn.classList.add('active', 'bg-purple-600', 'text-white', 'shadow-xs');
+
+      renderPhotoStory();
+    }
+
+    function renderPhotoStory() {
+      const photos = getActivePhotos();
+      const container = document.getElementById('photos-display-container');
+      const counter = document.getElementById('photo-counter-info');
+      const isDemo = userPhotos.length === 0;
+
+      counter.innerHTML = isDemo 
+        ? `<span class="text-amber-600 font-semibold"><i class="fa-solid fa-wand-magic-sparkles mr-1"></i>目前顯示 ${photos.length} 張示範照片 (Demo)</span>`
+        : `<span class="text-purple-600 font-bold"><i class="fa-solid fa-camera mr-1"></i>已載入 ${photos.length} 張實拍照片</span>`;
+
+      // Update Narrative Box
+      updateNarrativeStory(photos);
+
+      // Render View Based on Mode
+      if (currentStoryMode === 'timeline') {
+        renderTimelineView(photos, container);
+      } else if (currentStoryMode === 'itinerary') {
+        renderItineraryView(photos, container);
+      } else if (currentStoryMode === 'people') {
+        renderPeopleView(photos, container);
+      }
+    }
+
+    function updateNarrativeStory(photos) {
+      const titleElem = document.getElementById('narrative-title');
+      const bodyElem = document.getElementById('narrative-body');
+      const metaElem = document.getElementById('narrative-meta');
+
+      if (currentStoryMode === 'timeline') {
+        titleElem.textContent = "🌕 2026 中秋慢旅時光手帳：從迎賓大港橋到父女約會與溫馨休整";
+        bodyElem.textContent = `9 月 25 日下午兩點，丈母娘開車平安將老婆與 17 個月大的小女兒送抵高雄，大衛接過行李與小寶貝，開啟了溫馨的四天連假。從大港橋畔的微風輕軌與棧貳庫港景賞月，到第二天屏東森林圖書館地毯繪本翻閱、全冷氣綠建築屏東西市場與萬倉街鐵道橋下漫步，小女兒在車上午睡節奏完美，全程充滿歡笑。\n\n最難忘的莫過於 9 月 27 日上午田寮月世界 28 公尺高雄熊熱氣球的萌翻升空，以及傍晚老婆放心赴家族聚餐後，爸爸在義享天地一人單挑帶娃大獲全勝！烏龍麵剪碎搭配滑嫩茶碗蒸、推車看模型小火車與睡前拍睡一氣呵成。連假最後一天 9 月 28 日，全家在家自然醒休整、寶寶熟睡充飽電，為這趟中秋慢旅行程畫下最完美的句點。`;
+        metaElem.innerHTML = `<span><i class="fa-solid fa-location-dot mr-1"></i>涵蓋 7 處精選地標</span><span><i class="fa-regular fa-clock mr-1"></i>四天三夜完整時序</span><span><i class="fa-solid fa-child mr-1"></i>17M 成長紀念</span>`;
+      } else if (currentStoryMode === 'itinerary') {
+        titleElem.textContent = "📍 行程足跡全覽：高屏地景 ＆ 雙市集探索記";
+        bodyElem.textContent = `這趟旅行巧妙連結了港都水岸、國境之南森林文創與惡地月世界熱氣球：\n1. 高雄港灣（駁二大港橋 & 棧貳庫）：推車無障礙、海風徐徐、夜景賞月。\n2. 屏東文創（森林總圖 & 勝利星村 & 西市場 & 萬倉街）：全館空調綠建築市場吹冷氣、鐵路橋下全遮陰，幼兒出遊零曝曬。\n3. 田寮月世界：巨萌熱氣球打卡、在地蒜頭雞湯泡飯與麵線美食。\n4. 義享天地：高規格育嬰設施支援神隊友爸爸單挑帶娃。\n5. 溫暖家園：連假尾聲不出門，在家放鬆休整身心。`;
+        metaElem.innerHTML = `<span><i class="fa-solid fa-map-location-dot mr-1"></i>依景點分組回顧</span><span><i class="fa-solid fa-baby-carriage mr-1"></i>全平坦推車友善</span>`;
+      } else if (currentStoryMode === 'people') {
+        if (currentPersonFilter === '爸爸') {
+          titleElem.textContent = "👨 爸爸視角：迎賓開道、神隊友單挑帶娃滿分！";
+          bodyElem.textContent = `身為家庭的神隊友，大衛在 9/25 迎接丈母娘開車送回的妻女、搬運行李安置起居；9/27 晚上更展現獨當一面的帶娃實力！在義享天地從容餵食剪碎烏龍麵與蒸蛋、擦嘴換尿布、看模型火車、回家放洗澡水哄睡，讓老婆在家族聚餐無後顧之憂，堪稱年度最佳先生與超人老爸。`;
+        } else if (currentPersonFilter === '小寶貝') {
+          titleElem.textContent = "👧 小女兒 (17M) 成長冒險日記：大熊熊、水岸電車與吹冷氣！";
+          bodyElem.textContent = `17 個月大的小寶貝在這趟旅程中看見了許多新奇世界：高鐵站與外婆車車的大擁抱、大港橋旁滑過的大電車、屏東森林圖書館地毯上的彩色大繪本、屏東西市場涼爽舒服的果汁、田寮月世界天空上巨大無比的高雄熊熱氣球，還有爸爸一口口餵的美味烏龍麵，最後一天在熟悉的小床上睡得好甜好香！`;
+        } else if (currentPersonFilter === '丈母娘與家人') {
+          titleElem.textContent = "👵 丈母娘與家人：溫馨送行、歡喜團圓聚餐！";
+          bodyElem.textContent = `感謝丈母娘連假首日開車平安將老婆與小孫女送抵高雄相聚，讓大衛一家能順利開啟假期；9/27 晚上老婆與丈母娘及家族親友歡樂聚餐，重溫家庭團聚的溫馨，也給了大衛與女兒一對一培養深厚感情的絕佳機會！`;
+        } else {
+          titleElem.textContent = "👨‍👩‍👧 甜蜜全家福：中秋高屏圓滿歡聚時光";
+          bodyElem.textContent = `中秋連假不求趕路，唯求家人團聚與舒適慢活。夫妻兩人與 17 個月大的女兒攜手漫步在愛河灣、屏東綠蔭老屋與月世界惡地之間，有丈母娘的溫情送抵、有市集的手作溫度、有熱氣球的驚喜、有爸爸獨自帶娃的甜蜜浪漫，更有收假前在家全心放鬆的安穩踏實。`;
+        }
+        metaElem.innerHTML = `<span><i class="fa-solid fa-heart mr-1 text-pink-400"></i>家庭愛的凝聚</span><span><i class="fa-solid fa-camera mr-1"></i>主角情感特寫</span>`;
+      }
+    }
+
+    function renderTimelineView(photos, container) {
+      let html = `<div class="relative border-l-2 border-purple-300 ml-4 sm:ml-6 pl-4 sm:pl-6 space-y-6">`;
+      photos.forEach(p => {
+        const timeStr = p.dateTaken ? p.dateTaken.replace('T', ' ').substring(5, 16) : '時間記錄';
+        html += `
+          <div class="relative group">
+            <div class="absolute -left-[25px] sm:-left-[33px] top-1.5 w-4 h-4 rounded-full bg-purple-600 border-4 border-white shadow-xs"></div>
+            <div class="bg-white rounded-2xl p-4 sm:p-5 border border-slate-200 shadow-sm hover:shadow-md transition">
+              <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                <span class="badge-pill bg-purple-100 text-purple-800 text-xs"><i class="fa-regular fa-clock mr-1"></i>${timeStr}</span>
+                <span class="text-xs text-slate-500 font-medium"><i class="fa-solid fa-map-pin text-purple-500 mr-1"></i>${p.spotName}</span>
+              </div>
+              <h4 class="font-bold text-slate-900 text-sm sm:text-base mb-2">${p.title}</h4>
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 items-center">
+                <div class="sm:col-span-1 img-zoom-container h-40 bg-slate-100 rounded-xl overflow-hidden">
+                  <img src="${p.imgUrl}" alt="${p.title}" class="w-full h-full object-cover">
+                </div>
+                <div class="sm:col-span-2 text-xs sm:text-sm text-slate-600 leading-relaxed space-y-2">
+                  <p>${p.caption}</p>
+                  <div class="flex flex-wrap gap-1 pt-1">
+                    ${p.tags.map(t => `<span class="bg-slate-100 text-slate-600 px-2 py-0.5 rounded-md text-[11px] font-medium">#${t}</span>`).join('')}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+      });
+      html += `</div>`;
+      container.innerHTML = html;
+    }
+
+    function renderItineraryView(photos, container) {
+      // Group by spotName
+      const grouped = {};
+      photos.forEach(p => {
+        if (!grouped[p.spotName]) grouped[p.spotName] = [];
+        grouped[p.spotName].push(p);
+      });
+
+      let html = `<div class="grid grid-cols-1 md:grid-cols-2 gap-5">`;
+      for (const [spotName, pList] of Object.entries(grouped)) {
+        html += `
+          <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm space-y-3">
+            <div class="flex items-center justify-between border-b border-slate-100 pb-2">
+              <h4 class="font-bold text-slate-900 text-sm flex items-center gap-1.5">
+                <i class="fa-solid fa-location-dot text-purple-600"></i> ${spotName}
+              </h4>
+              <span class="badge-pill bg-purple-50 text-purple-700 text-xs">${pList.length} 張</span>
+            </div>
+            <div class="space-y-3">
+              ${pList.map(p => `
+                <div class="flex gap-3 items-center">
+                  <div class="w-20 h-20 rounded-xl overflow-hidden flex-shrink-0 bg-slate-100">
+                    <img src="${p.imgUrl}" class="w-full h-full object-cover">
+                  </div>
+                  <div class="text-xs text-slate-600 space-y-1">
+                    <div class="font-bold text-slate-800">${p.title}</div>
+                    <p class="line-clamp-2">${p.caption}</p>
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        `;
+      }
+      html += `</div>`;
+      container.innerHTML = html;
+    }
+
+    function renderPeopleView(photos, container) {
+      const filtered = currentPersonFilter === 'all' 
+        ? photos 
+        : photos.filter(p => p.tags.includes(currentPersonFilter));
+
+      if (filtered.length === 0) {
+        container.innerHTML = `
+          <div class="bg-white rounded-2xl p-8 text-center text-slate-500 border border-slate-200">
+            <i class="fa-solid fa-camera text-3xl text-purple-300 mb-2"></i>
+            <p class="text-sm font-semibold">此主角分類目前尚無標籤照片，可透過上傳實拍照片自動新增！</p>
+          </div>
+        `;
+        return;
+      }
+
+      let html = `<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">`;
+      filtered.forEach(p => {
+        html += `
+          <div class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="h-48 overflow-hidden bg-slate-100">
+                <img src="${p.imgUrl}" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+              </div>
+              <div class="p-4 space-y-2">
+                <div class="flex items-center justify-between text-xs text-slate-500">
+                  <span>${p.spotName}</span>
+                </div>
+                <h4 class="font-bold text-slate-900 text-sm">${p.title}</h4>
+                <p class="text-xs text-slate-600 line-clamp-3 leading-relaxed">${p.caption}</p>
+              </div>
+            </div>
+            <div class="p-4 pt-0 flex flex-wrap gap-1">
+              ${p.tags.map(t => `<span class="bg-purple-50 text-purple-700 px-2 py-0.5 rounded-md text-[10px] font-semibold">#${t}</span>`).join('')}
+            </div>
+          </div>
+        `;
+      });
+      html += `</div>`;
+      container.innerHTML = html;
+    }
+
+    function copyStoryText() {
+      const title = document.getElementById('narrative-title').textContent;
+      const body = document.getElementById('narrative-body').textContent;
+      const fullText = `${title}\n\n${body}\n\n— 2026 高屏中秋親子慢活遊 (9/25~9/28)`;
+
+      navigator.clipboard.writeText(fullText).then(() => {
+        const label = document.getElementById('copy-btn-label');
+        label.textContent = "已複製到剪貼簿！";
+        setTimeout(() => { label.textContent = "複製日記文字"; }, 2500);
+      });
+    }
+
+    // EXIF Upload Logic
+    async function handlePhotoUpload(event) {
+      const files = event.target.files;
+      if (!files || files.length === 0) return;
+
+      const statusElem = document.getElementById('upload-status');
+      statusElem.classList.remove('hidden');
+
+      const newPhotos = [];
+
+      for (let i = 0; i < files.length; i++) {
+        const file = files[i];
+        let lat = null, lng = null, dateTaken = null;
+
+        try {
+          if (window.exifr) {
+            const exif = await exifr.parse(file, { gps: true, pick: ['DateTimeOriginal', 'latitude', 'longitude'] });
+            if (exif) {
+              if (exif.latitude && exif.longitude) {
+                lat = exif.latitude;
+                lng = exif.longitude;
+              }
+              if (exif.DateTimeOriginal) {
+                dateTaken = new Date(exif.DateTimeOriginal).toISOString();
+              }
+            }
+          }
+        } catch (e) {
+          console.warn("EXIF parse error on", file.name, e);
+        }
+
+        const imgUrl = URL.createObjectURL(file);
+        const matchedSpot = matchNearestSpot(lat, lng);
+
+        newPhotos.push({
+          id: "user_" + Date.now() + "_" + i,
+          title: file.name.replace(/\.[^/.]+$/, ""),
+          imgUrl: imgUrl,
+          lat: lat || (matchedSpot ? matchedSpot.lat : 22.6870),
+          lng: lng || (matchedSpot ? matchedSpot.lng : 120.3015),
+          dateTaken: dateTaken || new Date().toISOString(),
+          spotId: matchedSpot ? matchedSpot.id : "user_spot",
+          spotName: matchedSpot ? matchedSpot.name : "高雄・自選地點",
+          tags: ["小寶貝", "全家福"],
+          caption: `拍攝於 ${matchedSpot ? matchedSpot.name : "高雄市區"}。小女兒開心出遊，留存珍貴的中秋成長足跡！`
+        });
+      }
+
+      userPhotos = [...userPhotos, ...newPhotos];
+      statusElem.classList.add('hidden');
+      renderPhotoStory();
+      plotPhotosOnMap();
+    }
+
+    function matchNearestSpot(lat, lng) {
+      if (!lat || !lng) return ITINERARY_STOPS[0];
+      let nearest = ITINERARY_STOPS[0];
+      let minDist = 999999;
+
+      ITINERARY_STOPS.forEach(stop => {
+        const dist = Math.hypot(stop.lat - lat, stop.lng - lng);
+        if (dist < minDist) {
+          minDist = dist;
+          nearest = stop;
+        }
+      });
+      return nearest;
+    }
+
+    function loadDemoPhotos() {
+      userPhotos = [];
+      renderPhotoStory();
+      plotPhotosOnMap();
+    }
+
+    function clearAllPhotos() {
+      userPhotos = [];
+      renderPhotoStory();
+      plotPhotosOnMap();
+    }
+
+
+    // ==========================================
+    // 🗺️ LEAFLET INTERACTIVE MAP INITIALIZATION
+    // ==========================================
+    let map = null;
+    let markersLayer = null;
+
+    function initMap() {
+      map = L.map('map').setView([22.75, 120.38], 11);
+
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors'
+      }).addTo(map);
+
+      markersLayer = L.layerGroup().addTo(map);
+      plotPhotosOnMap();
+    }
+
+    function plotPhotosOnMap() {
+      if (!map || !markersLayer) return;
+      markersLayer.clearLayers();
+
+      // Plot standard stops
+      ITINERARY_STOPS.forEach(stop => {
+        const marker = L.marker([stop.lat, stop.lng]).addTo(markersLayer);
+        marker.bindPopup(`
+          <div class="text-xs p-1">
+            <strong class="text-purple-800 text-sm block mb-1">${stop.name}</strong>
+            <span class="text-slate-500">Day ${stop.day} ‧ ${stop.period}</span>
+          </div>
+        `);
+      });
+
+      // Plot active photos
+      const photos = getActivePhotos();
+      photos.forEach(p => {
+        if (p.lat && p.lng) {
+          const circle = L.circleMarker([p.lat, p.lng], {
+            radius: 8,
+            fillColor: "#f59e0b",
+            color: "#ffffff",
+            weight: 2,
+            opacity: 1,
+            fillOpacity: 0.9
+          }).addTo(markersLayer);
+
+          circle.bindPopup(`
+            <div class="text-xs p-1 max-w-[200px]">
+              <img src="${p.imgUrl}" class="w-full h-24 object-cover rounded-md mb-1.5">
+              <strong class="text-slate-900 block mb-0.5">${p.title}</strong>
+              <p class="text-slate-600 line-clamp-2">${p.caption}</p>
+            </div>
+          `);
+        }
+      });
+    }
+
+    // Auto initialize on DOM ready
+    document.addEventListener('DOMContentLoaded', () => {
+      renderPhotoStory();
+      initMap();
+    });
+  </script>
+</body>
+</html>
